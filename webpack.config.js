@@ -1,26 +1,23 @@
-var path = require('path');
-var webpack = require('webpack');
+var //dev = require("./webpack/dev"),
 
-module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
-  }
-};
+    watch = require("./webpack.config.watch.js"),
+
+    //build = require("./webpack/build"),
+
+    BUILD_TARGET = process.env.npm_lifecycle_event || "dev";
+
+console.log('BUILD_TARGET', BUILD_TARGET)
+
+if(BUILD_TARGET === 'dev') {
+
+    module.exports = dev;
+
+} else if (BUILD_TARGET === 'watch') {
+
+    module.exports = watch;
+
+} else if (BUILD_TARGET === 'build') {
+
+    module.exports = build;
+
+}
