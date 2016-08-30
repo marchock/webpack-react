@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, LinkedStateMixin } from 'react';
+import linkState from 'react-link-state';
 import Header from '../../component/common/header/header';
 import Footer from '../../component/common/footer/footer';
 import Message from './message.js';
+
 
 export default class Home extends Component {
 
@@ -20,9 +22,33 @@ export default class Home extends Component {
                 'This is a message 3'
             ]
         };
+        // es6 bind events to keep "this" available
+        this.handleAdd = this.handleAdd.bind(this);
+        this.deleteMessage = this.deleteMessage.bind(this);
+        console.log('Home', this)
+        console.log('linkState', linkState) // TODO: 
+    }
 
+    deleteMessage(message) {
+        var newMessages = this.state.subMessages.filter((string) => {
+            if (string !== message) {
+                return string;
+            }
+        });
 
-        console.log('props', props)
+        this.setState({
+            subMessages: newMessages
+        })
+    }
+
+    handleAdd (e) {
+        var newMessage = 'ANOTHER MESSAGE';
+        var newMessages = this.state.subMessages.concat([newMessage]);
+
+        // https://facebook.github.io/react/docs/component-api.html#setstate
+        this.setState({
+            subMessages: newMessages
+        })
     }
 
     render() {
@@ -34,7 +60,7 @@ export default class Home extends Component {
         var message = 'this is a header';
 
         var subMessages = this.state.subMessages.map((string) => {
-            return <Message subMessage={string}/>
+            return <Message subMessage={string} onDelete={this.deleteMessage} />
         });
 
         /*React element can only return one element*/
@@ -44,6 +70,7 @@ export default class Home extends Component {
                 <h1 style={inlineStyles}>{this.state.message}</h1>
                 <p>This is it</p>
                 {subMessages}
+                <button onClick={this.handleAdd}>ADD</button>
                 <Footer titleMessage ={this.props.titleMessage} />
             </div>
         );
