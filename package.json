@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": ""
-  }
+  },
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
