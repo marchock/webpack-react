@@ -57,7 +57,7 @@ export default class Home extends Component {
             display: this.state.isVisible ? 'block' : 'none'
         }
 
-        var message = 'this is a header';
+        var message = 'this is a header header';
 
         var subMessages = this.state.subMessages.map((string) => {
             return <Message subMessage={string} onDelete={this.deleteMessage} />
@@ -68,10 +68,10 @@ export default class Home extends Component {
             <div>
                 <Header titleMessage ={message} />
                 <h1 style={inlineStyles}>{this.state.message}</h1>
-                <p>This is it</p>
+                <p>This is it and it again</p>
                 {subMessages}
                 <button onClick={this.handleAdd}>ADD</button>
-                <Footer titleMessage ={this.props.titleMessage} />
+                <Footer footerMessage ="footer message goes here" />
             </div>
         );
     }

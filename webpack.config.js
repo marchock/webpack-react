@@ -1,23 +1,34 @@
-var //dev = require("./webpack/dev"),
 
-    watch = require("./webpack.config.watch.js"),
+var path = require('path');
+var webpack = require('webpack');
 
-    //build = require("./webpack/build"),
 
-    BUILD_TARGET = process.env.npm_lifecycle_event || "dev";
+module.exports = {
+    devtool: 'eval',
 
-console.log('BUILD_TARGET', BUILD_TARGET)
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './src/modules/app'
+    ],
 
-if(BUILD_TARGET === 'dev') {
+    output: {
+        path: path.join(__dirname, '../static'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
+    },
 
-    module.exports = dev;
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
 
-} else if (BUILD_TARGET === 'watch') {
-
-    module.exports = watch;
-
-} else if (BUILD_TARGET === 'build') {
-
-    module.exports = build;
-
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            loaders: ['react-hot', 'babel'], // .babelrc can only be read is the config file is in the root directory, tried putting this file in the webpack folder and it cannot find .babelrc file and also tried putting the pram inside the config and still didnt work
+            exclude: /node_modules/,
+            include: path.join(__dirname, 'src')
+        }]
+    }
 }
