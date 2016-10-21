@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 
 export default class Nav extends Component {
 
     render() {
         return (
-            <nav>links go here</nav>
+            <div>
+                <Link to="/">home</Link> / 
+                <Link to="/product/1234">products</Link> / 
+                <Link to="/about-us">About Us</Link>
+            </div>
         );
     }
 }

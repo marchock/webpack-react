@@ -2,8 +2,11 @@
 var path = require('path');
 var webpack = require('webpack');
 
+console.log(path.join(__dirname + '/static'))
+
 
 module.exports = {
+
     devtool: 'eval',
 
     entry: [
@@ -13,9 +16,9 @@ module.exports = {
     ],
 
     output: {
-        path: path.join(__dirname, '../static'),
+        path: path.join(__dirname, 'static'),
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/'
     },
 
     plugins: [
