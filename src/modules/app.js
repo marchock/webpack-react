@@ -15,6 +15,9 @@ import Unknown from './page/_unknown/unknown.js';
 const store = BaseStore();
 
 
+var __svg__ = { path: '../assets/svg/*.svg', name: './svg/sprite.svg' };
+
+
 console.log('store', store)
 
 

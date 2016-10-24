@@ -1,17 +1,22 @@
-import { TEST_ACTION } from './home-types'
+import { INCREMENT, DECREMENT } from './home-types'
 
+// Set default values
 const initialState =  {
-    exampleData: 6
+    counter: 0
 };
 
 export default function home(state = initialState, action) {
 
     switch (action.type) {
-        case TEST_ACTION:
-            console.log('reducer', action);
+        case INCREMENT:
             return {
                 ...state,
-                exampleData: action.payload
+                counter: action.payload
+            };
+        case DECREMENT:
+            return {
+                ...state,
+                counter: action.payload
             };
         default:
             return state;

@@ -1,16 +1,25 @@
-import { TEST_ACTION } from './home-types'
+import { INCREMENT, DECREMENT } from './home-types'
 
-export function testAction(exampleData) {
+export function increment(num) {
     return function(dispatch) {
+        num += 1
 
-        // Access API
-        exampleData = exampleData + 1
 
-        console.log('exampleData', exampleData);
+        // dispatch the data to the reducer
+        dispatch({
+            type: INCREMENT,
+            payload: num
+        });
+    }
+}
+
+export function decrement(num) {
+    return function(dispatch) {
+        num -= 1
 
         dispatch({
-            type: TEST_ACTION,
-            payload: exampleData
+            type: DECREMENT,
+            payload: num
         });
     }
 }
