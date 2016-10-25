@@ -1,0 +1,72 @@
+/**
+ * Buttons
+ * @group css.base.buttons
+ */
+
+.btn {
+    @include font(18, 50, var(--font-nspcc-regular));
+    transition: color $transition-hover-speed $transition-hover-easing, background $transition-hover-speed $transition-hover-easing, border $transition-hover-speed $transition-hover-easing;
+    border: none;
+    padding: 0 18px 0 18px;
+    font-weight: bold;
+    color: $color-white;
+    text-align: center;
+    width: 276px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+// Extension of the base btn class
+.btn--example {
+    background: $color-white;;
+    padding: 5px 10px;
+}
+
+.btn--primary {
+    background: $color-salem;
+    min-height: 50px;
+    min-width: 276px;
+
+    &:hover,
+    &:active {
+        background: $color-jewel;
+    }
+}
+
+
+.btn--secondary {
+    background: $color-blumine;
+    min-height: 50px;
+    min-width: 276px;
+
+    &:hover,
+    &:active {
+        background: $color-elephant;
+    }
+}
+
+
+.btn--tertiary {
+    background: $color-aqua-island;
+    color: $color-mosque;
+    min-height: 40px;
+    min-width: 187px;
+
+    &:hover,
+    &:active {
+        background: $color-half-baked;
+    }
+}
+
+
+.btn--quaternary {
+    background: $color-eastern-blue;
+    min-height: 50px;
+    min-width: 187px;
+
+    &:hover,
+    &:active {
+        background: $color-matisse;
+    }
+}

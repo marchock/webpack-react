@@ -1,3 +1,10 @@
+var __svg__ = { path: '../assets/svg/*.svg', name: './svg/sprite.svg' };
+
+// CSS
+require('../assets/css/styles.css');
+
+
+// JS
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
@@ -11,15 +18,7 @@ import Product from './page/_product/product.js';
 import AboutUs from './page/_about-us/about-us.js';
 import Unknown from './page/_unknown/unknown.js';
 
-
 const store = BaseStore();
-
-
-var __svg__ = { path: '../assets/svg/*.svg', name: './svg/sprite.svg' };
-
-
-console.log('store', store)
-
 
 const root = (
     <Provider store={store}>

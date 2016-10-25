@@ -1,0 +1,84 @@
+/**
+ * Fonts
+ * @group css.base.fonts
+ */
+
+
+// ------------------------------------------------
+// Font Variables
+// ------------------------------------------------
+
+/**
+ * @group css.base.fonts
+ * @param {string} $font-arial
+ */
+:root {
+    --font-nspcc-regular: 'NSPCCRegular', Arial, Helvetica, sans-serif;
+    --font-nspcc-light: 'NSPCCLightItalic', Arial, Helvetica, sans-serif;
+    --font-nspcc-semibold: 'NSPCCSemibold', Arial, Helvetica, sans-serif;
+    --font-nspcc-bold: 'NSPCCBold', Arial, Helvetica, sans-serif;
+}
+
+// ------------------------------------------------
+// Global Font Styles
+// ------------------------------------------------
+
+// Font Sizing
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-nspcc-regular);
+}
+
+// Heading Styles
+h1 {
+    @include font(40, 45, var(--font-nspcc-semibold);
+    font-weight: 300;
+}
+
+h2,
+h3 {
+    @include font(24, 28, var(--font-nspcc-semibold);
+}
+
+p,
+li,
+a {
+    @include font(14, 18, var(--font-nspcc-regular));
+
+    @include mq($from: tablet) {
+        @include font(15, 19);
+    }
+
+    @include mq($from: smalldesktop) {
+        @include font(16, 20);
+    }
+}
+
+a {
+    @include font(14, 18);
+    transition: color $transition-hover-speed $transition-hover-easing;
+    text-decoration: none;
+}
+
+// Better font rendering
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+span,
+input,
+label,
+textarea,
+time,
+button,
+address {
+    @include anti-alias-text;
+}

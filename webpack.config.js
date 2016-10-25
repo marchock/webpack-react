@@ -3,7 +3,13 @@ var path = require('path');
 var webpack = require('webpack');
 var SvgStore = require('webpack-svgstore-plugin');
 
-console.log(path.join(__dirname + '/static'))
+var atImport = require("postcss-import");
+var postcssGridLayout = require("postcss-grid-layout"); // Custom
+var postcssNested = require("postcss-nested");
+var autoprefixer = require("autoprefixer");
+var mixins = require("postcss-mixins");
+var reporter = require("postcss-reporter");
+var variables = require("postcss-css-variables");
 
 
 module.exports = {
@@ -46,7 +52,16 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
 
-            {// IMAGE
+            { // CSS
+                test: /\.css$/,
+                loaders: [
+                  'style-loader',
+                  'css-loader?importLoaders=1',
+                  'postcss-loader'
+                ]
+            },
+
+            { // IMAGE
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 exclude: /(fonts)/,
                 loaders: [
@@ -55,5 +70,18 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+
+    postcss: function () {
+
+        return [
+            reporter({ clearMessages: true }),
+            atImport,
+            mixins,
+            postcssGridLayout,
+            postcssNested,
+            autoprefixer,
+            variables
+        ]; //https://github.com/postcss/postcss
+    },
 }
