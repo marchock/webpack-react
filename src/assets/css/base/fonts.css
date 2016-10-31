@@ -4,9 +4,6 @@
  */
 
 
-// ------------------------------------------------
-// Font Variables
-// ------------------------------------------------
 
 /**
  * @group css.base.fonts
@@ -19,11 +16,9 @@
     --font-nspcc-bold: 'NSPCCBold', Arial, Helvetica, sans-serif;
 }
 
-// ------------------------------------------------
-// Global Font Styles
-// ------------------------------------------------
 
-// Font Sizing
+
+
 html {
     font-size: 62.5%;
 }
@@ -32,15 +27,15 @@ body {
     font-family: var(--font-nspcc-regular);
 }
 
-// Heading Styles
+
 h1 {
-    @include font(40, 45, var(--font-nspcc-semibold);
+    @include font(40, 45, var(--font-nspcc-semibold));
     font-weight: 300;
 }
 
 h2,
 h3 {
-    @include font(24, 28, var(--font-nspcc-semibold);
+    @include font(24, 28, var(--font-nspcc-semibold));
 }
 
 p,
@@ -63,7 +58,7 @@ a {
     text-decoration: none;
 }
 
-// Better font rendering
+
 h1,
 h2,
 h3,

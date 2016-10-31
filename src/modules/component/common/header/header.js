@@ -9,7 +9,8 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header>{this.props.titleMessage}
+            <header>
+                <h1>{this.props.titleMessage}</h1>
                 <Nav />
             </header>
         );
