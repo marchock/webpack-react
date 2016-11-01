@@ -15,7 +15,7 @@ class Home extends Component {
 
     render() {
 
-        console.log('sdfsfsdfds', this.props);
+        console.log('Home', this.props);
 
         return (
             <div>

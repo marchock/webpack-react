@@ -17,6 +17,7 @@ import Home from './page/_home/home.js';
 import Product from './page/_product/product.js';
 import AboutUs from './page/_about-us/about-us.js';
 import Grid from './page/_grid/grid.js';
+import Video from './page/_video/video.js';
 import Unknown from './page/_unknown/unknown.js';
 
 const store = BaseStore();
@@ -28,6 +29,7 @@ const root = (
                 <IndexRoute component={Home} />
                 <Route path="about-us" component={AboutUs} />
                 <Route path="grid" component={Grid} />
+                <Route path="video" component={Video} />
                 <Route path="product/:product" component={Product} />
                 <Route path="**" component={Unknown} />
             </Route>

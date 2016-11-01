@@ -36,6 +36,7 @@
     "webpack-svgstore-plugin": "^3.0.4"
   },
   "dependencies": {
+    "axios": "^0.15.2",
     "babel-loader": "^6.2.5",
     "postcss-css-variables": "^0.6.0",
     "postcss-reporter": "^1.4.1",
@@ -45,6 +46,7 @@
     "react-link-state": "^0.1.2",
     "react-redux": "^4.4.5",
     "react-slick": "^0.14.5",
+    "react-youtube": "^7.2.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.13.2"
