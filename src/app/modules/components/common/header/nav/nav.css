@@ -1,0 +1,9 @@
+.nav {
+    width: 100%;
+    text-align: right;
+    a {
+        padding: 10px 30px;
+        background-color: lightgreen;
+        margin-right: 10px;
+    }
+}

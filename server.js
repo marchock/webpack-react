@@ -2,19 +2,16 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config.js');
 
-console.log('SERVER IS RUNNING')
-
-
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true,
-  contentBase: 'src',
-  stats: {
-    colors: true,
-    children: false,
-    chunks: false
-  }
+    publicPath: config.output.publicPath,
+    hot: true,
+    historyApiFallback: true,
+    contentBase: 'src',
+    stats: {
+        colors: true,
+        children: false,
+        chunks: false
+    },
 
 }).listen(3000, 'localhost', function (err, result) {
   if (err) {

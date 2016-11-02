@@ -3,15 +3,18 @@
  * @group css.base.accessibility
  */
 
-// Accessibility Links
+/* Accessibility Links */
 .acc-links {
+    z-index: 9999;
     top:20px;
     left: 20px;
     position: absolute;
     list-style-type: none;
 
     a {
-        @include font(22, 26);
+        font-size: 22px;
+        line-height: 26px;
+        font-family: var(--font-helvetica);
         color:#fff;
         background:#000;
         padding:10px;
@@ -19,7 +22,7 @@
 }
 
 
-// No Javascript/Browser Message
+/* No Javascript/Browser Message */
 .no-browser,
 .no-script {
     background-color: #000;
@@ -32,6 +35,8 @@
 
     p,
     p a {
-        @include font(22, 28);
+        font-size: 22px;
+        line-height: 28px;
+        font-family: var(--font-helvetica);
     }
 }

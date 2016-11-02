@@ -4,61 +4,73 @@
  */
 
 
+/**
+// ------------------------------------------------
+// Font Variables
+// ------------------------------------------------
+*/
 
 /**
  * @group css.base.fonts
  * @param {string} $font-arial
  */
 :root {
-    --font-nspcc-regular: 'NSPCCRegular', Arial, Helvetica, sans-serif;
-    --font-nspcc-light: 'NSPCCLightItalic', Arial, Helvetica, sans-serif;
-    --font-nspcc-semibold: 'NSPCCSemibold', Arial, Helvetica, sans-serif;
-    --font-nspcc-bold: 'NSPCCBold', Arial, Helvetica, sans-serif;
+  --font-helvetica: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 
+/**
+// ------------------------------------------------
+// Global Font Styles
+// ------------------------------------------------
+*/
 
-
+/*Font Sizing*/
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: var(--font-nspcc-regular);
+    font-family: var(--font-helvetica);
 }
 
-
+/*Heading Styles*/
 h1 {
-    @include font(40, 45, var(--font-nspcc-semibold));
+    font-size: 50px;
+    line-height: 60px;
+    font-family: var(--font-helvetica);
     font-weight: 300;
 }
 
 h2,
 h3 {
-    @include font(24, 28, var(--font-nspcc-semibold));
+    font-size: 30px;
+    line-height: 34px;
+    font-family: var(--font-helvetica);
+    font-weight: 300;
 }
 
 p,
 li,
 a {
-    @include font(14, 18, var(--font-nspcc-regular));
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: var(--font-helvetica);
+    font-weight: 300;
 
-    @include mq($from: tablet) {
-        @include font(15, 19);
-    }
-
-    @include mq($from: smalldesktop) {
-        @include font(16, 20);
+    @media (--mq-from-tablet) {
+        font-size: 16px;
     }
 }
 
 a {
-    @include font(14, 18);
-    transition: color $transition-hover-speed $transition-hover-easing;
+    font-size: 14px;
+    line-height: 18px;
+    transition: color 0.2s ease-out;
     text-decoration: none;
 }
 
-
+/*Better font rendering*/
 h1,
 h2,
 h3,
@@ -75,5 +87,6 @@ textarea,
 time,
 button,
 address {
-    @include anti-alias-text;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

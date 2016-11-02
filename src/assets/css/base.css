@@ -1,0 +1,33 @@
+/*
+ * @group css.styles
+ *
+ * This is the core/primary stylesheet for the whole site, all other stylesheets are pulled in by this one.
+ * It is mobile first so we declare all our base styles first add more through media queries
+ *
+ */
+
+/*************
+BASE Styles
+*************/
+
+
+/*
+Import Mixins
+*/
+@import "./globals.css";
+
+/*
+Import Base Styles
+*/
+@import "./base/normalize.css";
+@import "./base/base.css";
+@import "./base/fonts.css";
+@import "./base/accessibility.css";
+@import "./base/layout.css";
+
+/*
+Lib
+*/
+@import "lib/slider.css";
+
+

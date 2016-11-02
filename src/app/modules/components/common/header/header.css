@@ -1,0 +1,9 @@
+@import "../../../../../assets/css/globals.css";
+
+.header {
+    background-color: var(--color-light-gray);
+    display: table;
+    height: 80px;
+    padding: 40px 0;
+    width: 100%;
+}

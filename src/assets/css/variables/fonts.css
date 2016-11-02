@@ -1,0 +1,19 @@
+/**
+ * Fonts
+ * @group css.variables.fonts
+ */
+
+
+/**
+// ------------------------------------------------
+// Font Variables
+// ------------------------------------------------
+*/
+
+/**
+ * @group css.variables.fonts
+ * @param {string} $font-arial
+ */
+:root {
+  --font-helvetica: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
