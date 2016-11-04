@@ -7,7 +7,13 @@ export default class PageAbout extends Component {
 
     render() {
         return (
-            <h1>About us</h1>
+            <section>
+                <div className="grid">
+                    <div className="col-1-1">
+                        <h1>About us</h1>
+                    </div>
+                </div>
+            </section>
         );
     }
 };

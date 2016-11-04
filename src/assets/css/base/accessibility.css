@@ -6,7 +6,7 @@
 /* Accessibility Links */
 .acc-links {
     z-index: 9999;
-    top:20px;
+    top: 20px;
     left: 20px;
     position: absolute;
     list-style-type: none;
@@ -15,9 +15,9 @@
         font-size: 22px;
         line-height: 26px;
         font-family: var(--font-helvetica);
-        color:#fff;
-        background:#000;
-        padding:10px;
+        color: var(--color-white);
+        background: var(--color-black);
+        padding: 10px;
     }
 }
 
@@ -25,12 +25,12 @@
 /* No Javascript/Browser Message */
 .no-browser,
 .no-script {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-black);
+    color: var(--color-white);
     display: block;
     padding: 50px 20px;
     text-align: center;
-    position:relative;
+    position: relative;
     z-index: 999;
 
     p,

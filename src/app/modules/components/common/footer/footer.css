@@ -6,26 +6,18 @@
     background-color: var(--color-footer-bg);
     padding: 40px;
 
-
     .share-icon {
-        fill: #000;
+        fill: var(--color-white);
         width: 60px;
         height: 60px;
+        margin-right: 20px;
     }
 
     a {
-
         &:hover {
             .share-icon {
                 opacity: 1;
             }
-        }
-
-        .share-icon {
-            width: 34px;
-            height: 34px;
-            opacity: 0.7;
-            margin-left: 14px;
         }
     }
 }

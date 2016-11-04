@@ -1,15 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
 var SvgStore = require('webpack-svgstore-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-var atImport = require("postcss-import");
-var postcssGridLayout = require("postcss-grid-layout"); // Custom
-var postcssNested = require("postcss-nested");
-var autoprefixer = require("autoprefixer");
-var reporter = require("postcss-reporter");
-var variables = require("postcss-css-variables");
-var calc = require("postcss-calc");
-var conditionals = require('postcss-conditionals');
+// POSTCSS
+var postcss = require("./postcss.config.js");
 
 
 module.exports = {
@@ -17,6 +12,7 @@ module.exports = {
     devtool: 'eval',
 
     module: {
+
         loaders: [
             {
                 test: /\.js$/,
@@ -55,19 +51,12 @@ module.exports = {
                     { removeUselessStrokeAndFill: true }
                 ]
             }
-        }),
+        })
+
+        // new BundleAnalyzerPlugin()
     ],
 
     postcss: function () {
-        return [
-            reporter({ clearMessages: true }),
-            atImport,
-            variables,
-            postcssNested,
-            calc,
-            conditionals,
-            postcssGridLayout,
-            autoprefixer
-        ];
-    },
+        return postcss;
+    }
 }

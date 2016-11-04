@@ -30,15 +30,19 @@ class PageVideo extends Component {
 
 
         return (
-            <div>
-                <h1>{this.props.video.feed}</h1>
+            <section>
+                <div className="grid">
+                    <div className="col-1-1">
+                        <h1>{this.props.video.feed}</h1>
 
-                  <YouTube
-                    videoId="sC9abcLLQpI"
-                    opts={opts}
-                    onReady={this._onReady}
-                  />
-            </div>
+                          <YouTube
+                            videoId="sC9abcLLQpI"
+                            opts={opts}
+                            onReady={this._onReady}
+                          />
+                    </div>
+                </div>
+            </section>
         );
     }
 };

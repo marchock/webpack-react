@@ -3,29 +3,13 @@
  * @group css.base.fonts
  */
 
-
-/**
-// ------------------------------------------------
-// Font Variables
-// ------------------------------------------------
-*/
-
-/**
- * @group css.base.fonts
- * @param {string} $font-arial
- */
-:root {
-  --font-helvetica: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-}
-
-
 /**
 // ------------------------------------------------
 // Global Font Styles
 // ------------------------------------------------
 */
 
-/*Font Sizing*/
+/* Font Sizing */
 html {
     font-size: 62.5%;
 }
@@ -34,7 +18,7 @@ body {
     font-family: var(--font-helvetica);
 }
 
-/*Heading Styles*/
+/* Heading Styles */
 h1 {
     font-size: 50px;
     line-height: 60px;
@@ -70,7 +54,7 @@ a {
     text-decoration: none;
 }
 
-/*Better font rendering*/
+/* Better font rendering */
 h1,
 h2,
 h3,

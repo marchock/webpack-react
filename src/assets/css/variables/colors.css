@@ -13,8 +13,10 @@
 */
 
 :root {
-  --color-mine-shaft: #333;
-  --color-light-gray: #ccc;
-  --color-red: #F00;
-  --color-footer-bg: #add8e6;
+    --color-mine-shaft: #333;
+    --color-light-gray: #ccc;
+    --color-red: #f00;
+    --color-footer-bg: #add8e6;
+    --color-white: #fff;
+    --color-black: #000;
 }

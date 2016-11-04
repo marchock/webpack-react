@@ -20,36 +20,31 @@ class PageProduct extends Component {
         };
 
 
-
-
         return (
-            <div>
-                <h1 style={this.props.product.color}>Product page</h1>
-                <button onClick={() => this.props.actions.changeColor('red')} >RED</button>
-                <button onClick={() => this.props.actions.changeColor('green')} >GREEN</button>
-                <button onClick={() => this.props.actions.changeColor('blue')} >BLUE</button>
+            <section>
+                <div className="grid">
+                    <div className="col-1-1">
 
+                        <h1 style={this.props.product.color}>Product page</h1>
+                        <button onClick={() => this.props.actions.changeColor('red')} >RED</button>
+                        <button onClick={() => this.props.actions.changeColor('green')} >GREEN</button>
+                        <button onClick={() => this.props.actions.changeColor('blue')} >BLUE</button>
 
-            <Slider {...settings}>
-                    <div><h3>1</h3></div>
-                    <div><h3>2</h3></div>
-                    <div><h3>3</h3></div>
-                    <div><h3>4</h3></div>
-                    <div><h3>5</h3></div>
-                    <div><h3>6</h3></div>
-                  </Slider>
+                        <Slider {...settings}>
+                            <div><h3>1</h3></div>
+                            <div><h3>2</h3></div>
+                            <div><h3>3</h3></div>
+                            <div><h3>4</h3></div>
+                            <div><h3>5</h3></div>
+                            <div><h3>6</h3></div>
+                        </Slider>
 
-
-
-            </div>
+                    </div>
+                </div>
+            </section>
         );
     }
 };
-
-
-// REDUX
-
-// these are required mapStateToProps, mapDispatchToProps and connect
 
 
 // bind data to the props
