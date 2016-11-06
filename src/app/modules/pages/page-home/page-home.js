@@ -1,5 +1,5 @@
 // CSS
-require('./page-home.css');
+//require('./page-home.css');
 
 // JS
 import React, { Component } from 'react';
