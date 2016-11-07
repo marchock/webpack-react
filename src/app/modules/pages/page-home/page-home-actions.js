@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT } from './page-home-types'
 
 export function increment(num) {
-    return function(dispatch) {
+    return dispatch => {
         num += 1
 
 
@@ -14,7 +14,7 @@ export function increment(num) {
 }
 
 export function decrement(num) {
-    return function(dispatch) {
+    return dispatch => {
         num -= 1
 
         dispatch({

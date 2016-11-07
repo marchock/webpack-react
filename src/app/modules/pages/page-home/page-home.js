@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as Actions from './page-home-action';
+import * as Actions from './page-home-actions';
 
 
 class PageHome extends Component {
@@ -15,7 +15,7 @@ class PageHome extends Component {
 
     render() {
         return (
-            <section>
+            <section className="page-home">
                 <div className="grid">
                     <div className="col-1-1">
                         <h1>Home page.....</h1>
