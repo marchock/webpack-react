@@ -1,25 +1,19 @@
 import { INCREMENT, DECREMENT } from './page-home-types'
 
 export function increment(num) {
-    return dispatch => {
-        num += 1
+    num += 1;
 
-
-        // dispatch the data to the reducer
-        dispatch({
-            type: INCREMENT,
-            payload: num
-        });
+    return {
+        type: INCREMENT,
+        payload: num
     }
 }
 
 export function decrement(num) {
-    return dispatch => {
-        num -= 1
+    num -= 1;
 
-        dispatch({
-            type: DECREMENT,
-            payload: num
-        });
+    return {
+        type: INCREMENT,
+        payload: num
     }
 }

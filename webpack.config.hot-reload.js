@@ -3,6 +3,8 @@ var merge = require('webpack-merge'),
     webpack = require('webpack'),
     path = require('path');
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = merge(dev, {
 
     entry: [

@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var SvgStore = require('webpack-svgstore-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
 // POSTCSS
 var postcss = require("./postcss.config.js");
 
@@ -52,6 +53,8 @@ module.exports = {
                 ]
             }
         })
+
+
 
         // new BundleAnalyzerPlugin()
     ],
