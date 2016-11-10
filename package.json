@@ -11,10 +11,9 @@
     "start": "",
     "testDir": "node ./createDir.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.js'",
-    "watch": "NODE_ENV=watch node server.js",
-    "hot": "NODE_ENV=HOT_RELOAD node server.js",
-    "dev": "NODE_ENV=dev ./node_modules/.bin/webpack-dev-server"
-  }
+    "hot": "NODE_ENV=DEV node server.js ",
+    "build": "NODE_ENV=BUILD ./node_modules/.bin/webpack --progress -p"
+  },
   "repository": {
     "url": "https://github.com/marchock/webpack-react.git",
     "type": "git"
@@ -34,6 +33,7 @@
     "babel-preset-stage-0": "^6.0.15",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
+    "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
     "enzyme": "^2.5.1",
     "eslint": "^3.9.1",
@@ -45,6 +45,7 @@
     "jquery": "^3.1.1",
     "jsdom": "^9.8.3",
     "mocha": "^3.1.2",
+    "modernizr-webpack-plugin": "^1.0.5",
     "postcss-conditionals": "^2.0.2",
     "postcss-css-variables": "^0.6.0",
     "postcss-grid-layout": "^1.0.0",

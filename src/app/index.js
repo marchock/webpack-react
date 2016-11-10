@@ -1,7 +1,7 @@
-var __svg__ = { path: '../assets/svg/*.svg', name: './svg/sprite.svg' };
+const __svg__ = { path: '../assets/svg/*.svg', name: 'assets/svg/sprite.svg' };
 
 // CSS
-require('../assets/css/base.css');
+import CSS from '../assets/css/base.css';
 
 // JS
 import React from 'react';

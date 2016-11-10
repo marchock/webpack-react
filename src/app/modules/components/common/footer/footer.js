@@ -14,22 +14,22 @@ export default class Footer extends Component {
 
                     <a href="#" title="Facebook">
                         <svg className="share-icon">
-                            <use xlinkHref="/svg/sprite.svg#icon-header-facebook"></use>
+                            <use xlinkHref="/assets/svg/sprite.svg#icon-header-facebook"></use>
                         </svg>
                     </a>
                     <a href="#" title="Twitter">
                         <svg className="share-icon">
-                            <use xlinkHref="/svg/sprite.svg#icon-header-twitter"></use>
+                            <use xlinkHref="/assets/svg/sprite.svg#icon-header-twitter"></use>
                         </svg>
                     </a>
                     <a href="#" title="Google+">
                         <svg className="share-icon">
-                            <use xlinkHref="/svg/sprite.svg#icon-header-gplus"></use>
+                            <use xlinkHref="/assets/svg/sprite.svg#icon-header-gplus"></use>
                         </svg>
                     </a>
                     <a href="#" title="Email">
                         <svg className="share-icon">
-                            <use xlinkHref="/svg/sprite.svg#icon-header-mail"></use>
+                            <use xlinkHref="/assets/svg/sprite.svg#icon-header-mail"></use>
                         </svg>
                     </a>
                 </div>

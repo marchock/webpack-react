@@ -1,16 +1,33 @@
-var path = require('path');
-var webpack = require('webpack');
-var SvgStore = require('webpack-svgstore-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// TOOLS
+const webpack = require('webpack');
+const path = require('path');
+const SvgStore = require('webpack-svgstore-plugin');
+const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
+// CONFIG
+const ModernizrConfig = require('./modernizr-config.js');
 
-// POSTCSS
-var postcss = require("./postcss.config.js");
+// PATH
+const ROOT_PATH = path.resolve(__dirname);
+
+// ENVIRONMENT CONFIGURATION
+const NODE_ENV = process.env.NODE_ENV;
 
 
 module.exports = {
 
     devtool: 'eval',
+
+    resolve: {
+        root: ROOT_PATH,
+        alias: {
+            app: 'src/app', // These Alias's are to allow for relative paths when importing modules
+            assets: 'src/assets',
+            base: 'src/app/base',
+            modules: 'src/app/modules',
+        },
+        extensions: ['', '.js', '.jsx']
+    },
 
     module: {
 
@@ -44,6 +61,8 @@ module.exports = {
 
     plugins: [
 
+        new ModernizrWebpackPlugin(ModernizrConfig),
+
         //https://github.com/mrsum/webpack-svgstore-plugin
         new SvgStore({
             svgoOptions: {
@@ -52,14 +71,12 @@ module.exports = {
                     { removeUselessStrokeAndFill: true }
                 ]
             }
-        })
+        }),
 
-
-
-        // new BundleAnalyzerPlugin()
-    ],
-
-    postcss: function () {
-        return postcss;
-    }
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(NODE_ENV)
+            }
+        }),
+    ]
 }
